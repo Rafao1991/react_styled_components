@@ -3,9 +3,9 @@ import styled from "styled-components";
 import privado from "../../assets/images/privado.svg";
 import olho_icone from "../../assets/images/olho.svg";
 import dinheiro from "../../assets/images/dinheiro.svg";
-import { Box, Button, Detalhe, Icone, Saldo } from "../UI";
+import { Box, Button, Detalhe, IconeTema, Saldo } from "../UI";
 
-const IconeMargin = styled(Icone)`
+const IconeMargin = styled(IconeTema)`
   margin-top: "2px";
 `;
 
@@ -13,7 +13,7 @@ const Conta = () => {
   const [toggleState, untoggle] = useState(true);
 
   const toggleHandler = () => {
-    untoggle((toggleState) => !toggleState);
+    untoggle(() => !toggleState);
   };
 
   return (
@@ -22,7 +22,7 @@ const Conta = () => {
       <div style={{ fontSize: "26px", padding: "20px 0" }}>
         Saldo disponível{" "}
         <span>
-          <Icone src={dinheiro} alt="Ícone Saldo" />
+          <IconeTema src={dinheiro} alt="Ícone Saldo" />
         </span>
         {toggleState ? (
           <Saldo>
